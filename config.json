@@ -22,14 +22,13 @@
             "main": "main.ts",
             "version": "0.0.1",
             "files": [
-                "main.ts",
-                "libraries/petoi_ai.py",
-                "_menus/index.json",
-                "_images/icon.svg",
                 "_images/featured.png",
+                "_images/icon.svg",
                 "_locales/en.json",
                 "_locales/zh-cn.json",
-                "_locales/it.json"
+                "_locales/it.json",
+                "_menus/index.json",
+                "libraries/libraries.zip"
             ],
             "dependencies": {
                 "requests": "",
