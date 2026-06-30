@@ -9,11 +9,11 @@
         "en": "Python mode: capture from the PC webcam and send to an LLM (OpenRouter/OpenAI-compatible) with a custom prompt. Blocks for camera, AI request, cost/impact stats and Petoi serial control.",
         "zh-cn": "Python模式：从电脑摄像头采集并发送给大语言模型。"
     },
-    "author": "Petoi project",
+    "author": "halykoss",
     "email": "federico.p98@gmail.com",
     "license": "MIT",
     "isBoard": false,
-    "id": "petoiAiVisionPy",
+    "id": "aivision",
     "version": "0.0.1",
     "platform": ["win", "mac", "linux"],
     "asset": {
