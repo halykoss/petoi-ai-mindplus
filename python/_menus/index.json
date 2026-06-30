@@ -1,0 +1,27 @@
+{
+    "REASONING": {
+        "menu": [["attivo", "True"], ["disattivo", "False"]]
+    },
+    "ACTION": {
+        "menu": [
+            ["rest", "rest"],
+            ["sit", "sit"],
+            ["stand", "stand"],
+            ["balance", "balance"],
+            ["walk_forward", "walk_forward"],
+            ["walk_left", "walk_left"],
+            ["walk_right", "walk_right"],
+            ["turn_left", "turn_left"],
+            ["turn_right", "turn_right"],
+            ["backward", "backward"],
+            ["greet", "greet"],
+            ["stretch", "stretch"],
+            ["look_up", "look_up"],
+            ["check", "check"],
+            ["play_dead", "play_dead"],
+            ["backflip", "backflip"],
+            ["pushup", "pushup"],
+            ["beep", "beep"]
+        ]
+    }
+}

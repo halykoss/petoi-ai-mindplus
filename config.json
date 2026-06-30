@@ -1,0 +1,41 @@
+{
+    "name": {
+        "it": "AI Vision (LLM)",
+        "en": "AI Vision (LLM)",
+        "zh-cn": "AI视觉 (LLM)"
+    },
+    "description": {
+        "it": "Modalita' Python: cattura dalla webcam del PC e invia a un LLM (OpenRouter/OpenAI-compatibile) con prompt personalizzato. Blocchi per camera, richiesta AI, statistiche costo/impatto e controllo seriale del Petoi.",
+        "en": "Python mode: capture from the PC webcam and send to an LLM (OpenRouter/OpenAI-compatible) with a custom prompt. Blocks for camera, AI request, cost/impact stats and Petoi serial control.",
+        "zh-cn": "Python模式：从电脑摄像头采集并发送给大语言模型。"
+    },
+    "author": "Petoi project",
+    "email": "federico.p98@gmail.com",
+    "license": "MIT",
+    "isBoard": false,
+    "id": "petoiAiVisionPy",
+    "version": "0.0.1",
+    "platform": ["win", "mac", "linux"],
+    "asset": {
+        "python": {
+            "dir": "python/",
+            "main": "main.ts",
+            "version": "0.0.1",
+            "files": [
+                "main.ts",
+                "libraries/petoi_ai.py",
+                "_menus/index.json",
+                "_images/icon.svg",
+                "_images/featured.png",
+                "_locales/en.json",
+                "_locales/zh-cn.json",
+                "_locales/it.json"
+            ],
+            "dependencies": {
+                "requests": "",
+                "opencv-python": "",
+                "pyserial": ""
+            }
+        }
+    }
+}
