@@ -173,6 +173,14 @@ namespace petoiAiVisionPy {
         Generator.addCode(`ai.send_message(${parameter.URL.code}, ${parameter.TEXT.code})`);
     }
 
+    //% block="invia messaggio [TEXT] a URL [URL] e restituisci risposta" blockType="reporter"
+    //% TEXT.shadow="string" TEXT.defl="Ciao Claudio!!!"
+    //% URL.shadow="string" URL.defl="https://petoi.onrender.com/api/messages"
+    export function sendMessageAndGet(parameter: any, block: any) {
+        Generator.addImport(`from petoi_ai import ai`);
+        Generator.addCode(`ai.send_message(${parameter.URL.code}, ${parameter.TEXT.code})`);
+    }
+
     //% block="esito ultimo messaggio HTTP" blockType="reporter"
     export function getLastPost(parameter: any, block: any) {
         Generator.addImport(`from petoi_ai import ai`);

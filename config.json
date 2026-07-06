@@ -14,13 +14,17 @@
     "license": "MIT",
     "isBoard": false,
     "id": "aivision",
-    "version": "0.0.2",
-    "platform": ["win", "mac", "linux"],
+    "version": "0.0.3",
+    "platform": [
+        "win",
+        "mac",
+        "linux"
+    ],
     "asset": {
         "python": {
             "dir": "python/",
             "main": "main.ts",
-            "version": "0.0.2",
+            "version": "0.0.3",
             "files": [
                 "_images/featured.png",
                 "_images/icon.svg",

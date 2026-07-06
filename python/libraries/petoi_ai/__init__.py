@@ -260,13 +260,23 @@ class AIVision:
 
     # ---------- invio messaggio HTTP (webhook) ----------
     def send_message(self, url, text, source="robot"):
-        """POST JSON {"text":..., "source":...} a un URL. URL e testo liberi."""
+        """POST JSON {"text":..., "source":...} a un URL. URL e testo liberi.
+
+        Restituisce un feedback con status + corpo della risposta, es.
+        "200 OK | {...}", oppure "ERRORE: ..." in caso di problema.
+        """
         import requests
         headers = {"Content-Type": "application/json"}
         payload = {"text": str(text), "source": str(source)}
         try:
             r = requests.post(url, headers=headers, json=payload, timeout=15)
-            self.last_post = str(r.status_code)
+            body = (r.text or "").strip()
+            if len(body) > 300:
+                body = body[:300] + "..."
+            reason = getattr(r, "reason", "") or ""
+            self.last_post = ("%d %s" % (r.status_code, reason)).strip()
+            if body:
+                self.last_post += " | " + body
         except Exception as e:
             self.last_post = "ERRORE: " + str(e)
         return self.last_post
