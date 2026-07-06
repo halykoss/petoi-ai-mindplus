@@ -63,6 +63,7 @@ class AIVision:
         self._last_send = 0.0
         self._cap = None
         self._ser = None
+        self.last_post = ""         # esito ultimo invio messaggio HTTP
 
         # statistiche
         self.last_cost = 0.0
@@ -256,6 +257,22 @@ class AIVision:
         if obj and obj.get(field) is not None:
             return str(obj.get(field))
         return ""
+
+    # ---------- invio messaggio HTTP (webhook) ----------
+    def send_message(self, url, text, source="robot"):
+        """POST JSON {"text":..., "source":...} a un URL. URL e testo liberi."""
+        import requests
+        headers = {"Content-Type": "application/json"}
+        payload = {"text": str(text), "source": str(source)}
+        try:
+            r = requests.post(url, headers=headers, json=payload, timeout=15)
+            self.last_post = str(r.status_code)
+        except Exception as e:
+            self.last_post = "ERRORE: " + str(e)
+        return self.last_post
+
+    def get_last_post(self):
+        return self.last_post
 
     # ---------- Petoi (seriale) ----------
     def connect(self, port, baud=115200):
